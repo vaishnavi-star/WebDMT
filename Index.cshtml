@@ -27,7 +27,7 @@
         -->
 
             <div style="margin: 10px;">
-                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal2" id="jj">
+                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" id="jj">
                     <span class="glyphicon glyphicon-plus" style="margin-right: 10px; float: left"></span>
                     Add New Server
                 </button>
@@ -220,220 +220,91 @@
             </div>
 
 
-            <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
+
+                    <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">
                                 &times;
                             </button>
-                            <h4 class="modal-title">Select Server</h4>
+                            <h4 class="modal-title">Enter Server Information</h4>
                         </div>
                         <div class="modal-body">
-                            <form role="form" name="serverForm1">
-                                <!--<div class="form-group">
-                            <label for="server">Enter Server</label>
-                            <input type="radio" id="sqlserver" placeholder="Enter Server" class="form-control" ng-model="server" required />
+                            <div>
+                                <input type="image" src="~/img/sql-server-595x3350.jpg" height="40" width="40" />
+                                <input type="radio" ng-model="myVar" value="sql" data-toggle="modal" data-target="#myModal1" data-dismiss="modal" /> SQL Server
+                            </div>
+                            <hr />
+                            <div>
+                                <input type="image" src="~/img/snowflake-2910087_1920-1024x791.png" height="40" width="40" />
+                                <input type="radio" ng-model="myVar" value="snowflake" data-toggle="modal" data-target="#myModal2" /> Snowflake
+                            </div>
+                            <hr />
+                            <div>
+                                <input type="image" src="~/img/postgresql.png" height="40" width="40" />
+                                <input type="radio" ng-model="myVar" value="postg" data-toggle="modal" data-target="#myModal3" /> PostgreSQL
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="username">Enter Username</label>
-                            <input type="radio" id="snowflake" ng-disabled="integratedSecurity" placeholder="Enter Username" class="form-control" ng-model="username" />
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Enter Password</label>
-                            <input type="radio" id="postgresql" ng-disabled="integratedSecurity" placeholder="Enter Password" class="form-control" ng-model="password" />
-                        </div>-->
-                                <div class="radio" data-toggle="modal" data-target="#myModal3">
-                                    <input type="image" src="~/img/sql-server-595x3350.jpg" height="40" width="40" />
-                                    <label>
-                                        <input type="radio" ng-model="myVar" value="sql">
-                                        SQL Server
-                                    </label>
-                                </div>
-                                <hr />
-                                <div class="radio" data-toggle="modal" data-target="#myModal4">
-                                    <input type="image" src="~/img/snowflake-2910087_1920-1024x791.png" height="40" width="45" />
-                                    <label>
-                                        <input type="radio" ng-model="myVar" value="snowflake">
-                                        Snowflake
-                                    </label>
-                                </div>
-                                <hr />
-                                <div class="radio" data-toggle="modal" data-target="#myModal5">
-                                    <input type="image" src="~/img/postgresql.png" height="40" width="40" />
-                                    <label>
-                                        <input type="radio" ng-model="myVar" value="postg">
-                                        PostgreSQL
-                                    </label>
-                                </div>
-                                <!-- <div class="modal-footer">
 
-                            <input type="button" ng-disabled="serverForm.$invalid" class="btn btn-default btn-block" value="GO" data-dismiss="modal" ng-click="connect(1);" />
-                        </div>-->
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
-
 
 
             <!-- Add Server Modal:Start -->
-            <div ng-switch="myVar">
-                <div class="modal fade" id="myModal3" role="dialog" ng-switch-when="sql">
-                    <div class="modal-dialog">
+            <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
 
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">
-                                    &times;
-                                </button>
-                                <h4 class="modal-title">Enter SQL Server Information</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form role="form" name="serverForm">
-                                    <div class="form-group">
-                                        <label for="server">Enter Server</label>
-                                        <input type="text" id="server" placeholder="Enter Server" class="form-control" ng-model="server" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="username">Enter Username</label>
-                                        <input type="text" id="username" ng-disabled="integratedSecurity" placeholder="Enter Username" class="form-control" ng-model="username" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Enter Password</label>
-                                        <input type="password" id="password" ng-disabled="integratedSecurity" placeholder="Enter Password" class="form-control" ng-model="password" />
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" ng-model="integratedSecurity">
-                                            Integrated Security
-                                        </label>
-                                    </div>
-                                    <hr />
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" ng-model="rememberMe">
-                                            Remember Me
-                                        </label>
-                                    </div>
-                                    <div class="modal-footer">
-
-                                        <input type="button" ng-disabled="serverForm.$invalid" class="btn btn-default btn-block" value="GO" data-dismiss="modal" ng-click="connect(1);" />
-                                    </div>
-                                </form>
-                            </div>
-
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                &times;
+                            </button>
+                            <h4 class="modal-title">Enter Server Information</h4>
                         </div>
-                    </div>
+                        <div class="modal-body">
+                            <form role="form" name="serverForm">
+                                <div class="form-group">
+                                    <label for="server">Enter Server</label>
+                                    <input type="text" id="server" placeholder="Enter Server" class="form-control" ng-model="server" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="username">Enter Username</label>
+                                    <input type="text" id="username" ng-disabled="integratedSecurity" placeholder="Enter Username" class="form-control" ng-model="username" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Enter Password</label>
+                                    <input type="password" id="password" ng-disabled="integratedSecurity" placeholder="Enter Password" class="form-control" ng-model="password" />
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="integratedSecurity">
+                                        Integrated Security
+                                    </label>
+                                </div>
+                                <hr />
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="rememberMe">
+                                        Remember Me
+                                    </label>
+                                </div>
+                                <div class="modal-footer">
 
-                </div>
-
-
-
-                <div class="modal fade" id="myModal4" role="dialog" ng-switch-when="snowflake">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">
-                                    &times;
-                                </button>
-                                <h4 class="modal-title">Enter Snowflake Information</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form role="form" name="serverForm">
-                                    <div class="form-group">
-                                        <label for="server">Enter Server</label>
-                                        <input type="text" id="server" placeholder="Enter Server" class="form-control" ng-model="server" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="username">Enter Username</label>
-                                        <input type="text" id="username" ng-disabled="integratedSecurity" placeholder="Enter Username" class="form-control" ng-model="username" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Enter Password</label>
-                                        <input type="password" id="password" ng-disabled="integratedSecurity" placeholder="Enter Password" class="form-control" ng-model="password" />
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" ng-model="integratedSecurity">
-                                            Integrated Security
-                                        </label>
-                                    </div>
-                                    <hr />
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" ng-model="rememberMe">
-                                            Remember Me
-                                        </label>
-                                    </div>
-                                    <div class="modal-footer">
-
-                                        <input type="button" ng-disabled="serverForm.$invalid" class="btn btn-default btn-block" value="GO" data-dismiss="modal" ng-click="connect(1);" />
-                                    </div>
-                                </form>
-                            </div>
-
+                                    <input type="button" ng-disabled="serverForm.$invalid" class="btn btn-default btn-block" value="GO" data-dismiss="modal" ng-click="connect(1);" />
+                                </div>
+                            </form>
                         </div>
+
                     </div>
-
                 </div>
-
-                <div class="modal fade" id="myModal5" role="dialog" ng-switch-when="postg">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">
-                                    &times;
-                                </button>
-                                <h4 class="modal-title">Enter PostgreSQL Information</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form role="form" name="serverForm">
-                                    <div class="form-group">
-                                        <label for="server">Enter Server</label>
-                                        <input type="text" id="server" placeholder="Enter Server" class="form-control" ng-model="server" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="username">Enter Username</label>
-                                        <input type="text" id="username" ng-disabled="integratedSecurity" placeholder="Enter Username" class="form-control" ng-model="username" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Enter Password</label>
-                                        <input type="password" id="password" ng-disabled="integratedSecurity" placeholder="Enter Password" class="form-control" ng-model="password" />
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" ng-model="integratedSecurity">
-                                            Integrated Security
-                                        </label>
-                                    </div>
-                                    <hr />
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" ng-model="rememberMe">
-                                            Remember Me
-                                        </label>
-                                    </div>
-                                    <div class="modal-footer">
-
-                                        <input type="button" ng-disabled="serverForm.$invalid" class="btn btn-default btn-block" value="GO" data-dismiss="modal" ng-click="connect(1);" />
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-
             </div>
+
+
+
             <div id="footer" class="navbar navbar-fixed-bottom">
                 <div class="container">
                     <p class="muted credit">Developed and Maintained by A&A Consultancy Services.</p>
